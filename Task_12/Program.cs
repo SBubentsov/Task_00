@@ -28,16 +28,8 @@ if (a < b)
 }
 else
 {
-    if (MultipleNumber(a, b) == 0)
-    {
-        Console.Write("Кратно");
-    }
-    else
-    {
-         Console.Write("Не кратно, остаток ");
-        Console.Write(MultipleNumber(a, b));
-    }
-    
+    int rest = MultipleNumber(a, b);
+    Console.WriteLine(rest == 0 ? "Кратно" : $"Не кратно, остаток {rest}");
 }
 
 

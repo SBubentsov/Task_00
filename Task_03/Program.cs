@@ -1,25 +1,26 @@
-﻿// 1. Напишите программу, которая на вход принимает два числа
-// и проверяет, является ли первое число квадратом второго.
-
-// a = 25, b = 5 -> да
-// a = 2, b = 10 -> нет
-// a = 9, b = -3 -> да
-// a = -3 b = 9 -> нет
+﻿// Напишите программу, которая
+// будет выдавать название дня недели
+// по заданному номеру.
+  
+// 3 -> Среда 5 -> Пятница
 
 
-Console.Write("Введите целое число №1: ");
+Console.Write("Введите число: ");
 
 int a = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите целое число №2: ");
-
-int b = Convert.ToInt32(Console.ReadLine());
-
-if ( a == b * b )
+if ( a > 0 && a < 8 )
     {
-        Console.WriteLine("Является ли первое число квадратом второго? Да");
+        if (a == 1) Console.WriteLine("Понедельник");
+        if (a == 2) Console.WriteLine("Вторник");
+        if (a == 3) Console.WriteLine("Среда");
+        if (a == 4) Console.WriteLine("Четверг");
+        if (a == 5) Console.WriteLine("Пятница");
+        if (a == 6) Console.WriteLine("Суббота");
+        if (a == 7) Console.WriteLine("Воскресение");
     }
+
     else
     {
-        Console.WriteLine("Является ли первое число квадратом второго? Нет");
+        Console.WriteLine("ты живешь на другой планете");
     }

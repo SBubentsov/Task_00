@@ -8,9 +8,9 @@
 
 int MaxDigits(int number)
 {
-    int firstDigit = num / 100;
-    int therdDigit = num % 10;
-    return firstDigit > therdDigit ? firstDigit : secondDigit;
+    int firstDigit = number / 100;
+    int therdDigit = number % 10;
+    return firstDigit > therdDigit ? firstDigit : therdDigit;
 }
 
 

@@ -6,6 +6,7 @@
 // a = 9, b = -3 -> да
 // a = -3 b = 9 -> нет
 
+
 Console.Write("Введите целое число №1: ");
 
 int a = Convert.ToInt32(Console.ReadLine());

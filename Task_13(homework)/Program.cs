@@ -17,12 +17,10 @@ int a = Convert.ToInt32(Console.ReadLine());
 
 if (a > 99 || a < -99)
 {
-    if (a < -99) a = a * -1;
+    if (a < -99) a*= -1;
 
-        Console.Write(TherdDigit(a));
+    Console.Write(TherdDigit(a));
 }
-
-
 else
 {
     Console.Write("Третьей цифры нет.");

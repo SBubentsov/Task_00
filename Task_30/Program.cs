@@ -3,12 +3,6 @@
 // 2: нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
-
-Console.Write("Введите число: ");
-
-int a = Convert.ToInt32(Console.ReadLine());
-
-
 int[] CreateArray(int size)
 {
     int[] array = new int[size];
@@ -27,6 +21,10 @@ void PrintArray(int[] array)
         Console.Write($"{array[i]} | ");
     }
 }
+
+Console.Write("Введите число: ");
+
+int a = Convert.ToInt32(Console.ReadLine());
 
 if (a > 0)
 {

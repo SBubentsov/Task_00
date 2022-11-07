@@ -16,10 +16,13 @@ int[] CreateArray(int size)
 
 void PrintArray(int[] array)
 {
+    Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{array[i]} | ");
+        Console.Write($"{array[i]}");
+        if (i<array.Length-1) Console.Write(" | ");
     }
+    Console.WriteLine(" ]");
 }
 
 Console.Write("Введите число: ");

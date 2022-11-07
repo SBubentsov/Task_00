@@ -8,7 +8,7 @@ string Coordinats(int diaposon)
     if (diaposon == 2) return "X < 0 , Y > 0";
     if (diaposon == 3) return "X < 0 , Y < 0";
     if (diaposon == 4) return "X > 0 , Y < 0";
-    return null;
+    return "0";
 
 }
 
@@ -18,7 +18,7 @@ int quar = Convert.ToInt32(Console.ReadLine());
 
 string quarter = Coordinats(quar);
 
-Console.WriteLine(quarter == null 
+Console.WriteLine(quarter == "0"
 ? "Введен некорректный номер четверти" 
 : $"В указанной четверти диапазон значений: {quarter}");
 

@@ -6,19 +6,18 @@
 
 void Table(int n)
 {
-    if (n > 0)
-    {
-        int count = 1;
-        Console.WriteLine("Все квадраты чисел от 1 до указанного числа:");
-        while (count <= n)
-        {
 
-            Console.WriteLine($"{count} | {count * count}");
-            count += 1;
-        }
+
+    int count = 1;
+    Console.WriteLine("Все квадраты чисел от 1 до указанного числа:");
+    while (count <= n)
+    {
+
+        Console.WriteLine($"{count,6} | {count * count,6}");
+        count += 1;
     }
-    else Console.WriteLine("Недопустимое число");
 }
+
 
 
 Console.Write("Введите число больше 1: ");
@@ -39,5 +38,5 @@ int a = Convert.ToInt32(Console.ReadLine());
 //         count += 1;
 //     }
 // }    
-
-Table(a);
+if (a > 0) Table(a);
+else Console.WriteLine("Недопустимое число");

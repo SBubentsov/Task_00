@@ -9,9 +9,9 @@ int Count(int n)
 {
     int count = 0;
     
-    while (n > 0 || n < 0)
+    while (n!= 0)
     {
-        n = n / 10;
+        n /= 10;
         count++;
     }
     return count > 0 ? count : 1;

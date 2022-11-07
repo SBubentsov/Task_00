@@ -8,6 +8,7 @@
 
 int TherdDigit(int number)
 {
+    while (number > 999) number = number / 10;
     return number % 10;
 }
 
@@ -18,9 +19,7 @@ if (a > 99 || a < -99)
 {
     if (a < -99) a = a * -1;
 
-    while (a > 999) a = a / 10;
-
-    Console.Write(TherdDigit(a));
+        Console.Write(TherdDigit(a));
 }
 
 

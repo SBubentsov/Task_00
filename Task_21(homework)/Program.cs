@@ -22,8 +22,8 @@ int zb = Convert.ToInt32(Console.ReadLine());
 
 
 
-double l = Math.Sqrt( Square(xa, xb) + Square(ya, yb) + Square(za, zb));
-double length = Math.Round(l, 2, MidpointRounding.ToZero);
+double distance = Math.Sqrt( Square(xa, xb) + Square(ya, yb) + Square(za, zb));
+double length = Math.Round(distance, 2, MidpointRounding.ToZero);
 Console.WriteLine($"Длинна отрезка по заданным точкам: {length}");
 
 int Square(int num1, int num2)

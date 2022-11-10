@@ -7,12 +7,12 @@
 int[] CreateArray(int size)
 {
     int[] array = new int[size];
-   
+    Random rnd = new Random();
     for (int i = 0; i < size; i++)
     {
-        array[i] = new Random().Next(-100, 101);
+        array[i] = rnd.Next(-100, 101);
     }
- return array;
+    return array;
 }
 
 void PrintArray(int[] array)
@@ -21,7 +21,7 @@ void PrintArray(int[] array)
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write($"{array[i]}");
-        if (i<array.Length-1) Console.Write(" | ");
+        if (i < array.Length - 1) Console.Write(" | ");
     }
     Console.WriteLine(" ]");
 }
@@ -32,7 +32,7 @@ int a = Convert.ToInt32(Console.ReadLine());
 
 if (a > 0)
 {
- int[] arr= CreateArray(a);
- PrintArray(arr);
+    int[] arr = CreateArray(a);
+    PrintArray(arr);
 }
 else Console.WriteLine("Введено некорректное число, требуется целое положительное число.");

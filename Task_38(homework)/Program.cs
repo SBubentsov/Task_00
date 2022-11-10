@@ -63,8 +63,7 @@ int maximum = 11;
 
 double[] arr = CreateArrayRndDouble(leng, minimum, maximum);
 PrintArray(arr);
-double result = DifferenceMaxMinNumberArray(arr);
-double resultDiff = Math.Round(result, 1, MidpointRounding.ToEven);
+double resultDiff = Math.Round(DifferenceMaxMinNumberArray(arr), 1, MidpointRounding.ToEven);
 
 Console.WriteLine($"Разница между минимальным и максимальным значениями массива -> {resultDiff}");
 

@@ -37,19 +37,19 @@ Console.WriteLine($"Квадрат числа {num} = {square}");
 //     }
 // }
 
-void FillArray(int[,] matr, int min, int max) // метод заполнения двумерного массива псевдослучайными числами
-{
-    Random rnd = new Random();
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
+// void FillArray(int[,] matr, int min, int max) // метод заполнения двумерного массива псевдослучайными числами
+// {
+//     Random rnd = new Random();
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
 
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            matr[i, j] = rnd.Next(min, max + 1);
-        }
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = rnd.Next(min, max + 1);
+//         }
 
-    }
-}
+//     }
+// }
 
 
 

@@ -1,6 +1,11 @@
-﻿// 51. Задайте двумерный массив.
-// найдите сумму элементов находящихся на главной диагонали.
-//  0.0 1.1 и т.д.
+﻿// Задача 52. Задайте двумерный массив из целых чисел.
+// Найдите среднее арифметическое элементов в каждом столбце.
+
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 Console.Clear();
 
@@ -34,24 +39,44 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int SummMainDiagMatrix(int[,] matrix)
+double[] CreateArrayAverage(int[,] matrix)
 {
-    int count = default;
-    for (int i = 0; i < matrix.GetLength(0) && i < matrix.GetLength(1); i++)
+
+
+    double[] array = new double[matrix.GetLength(1)];
+    
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
-      count += matrix[i,i];
+    array[j] =     
+    
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        array[i] += matrix[i,j];
     }
-    return count;
+    }
+    return array;
+}
+
+void PrintArray(int[] array)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) Console.Write($"{array[i]} | ");
+        else Console.Write($"{array[i]}");
+    }
+    Console.WriteLine(" ]");
 }
 
 Console.WriteLine("Введите количество строк массива");
 int newrows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов массива");
 int newcolumns = Convert.ToInt32(Console.ReadLine());
-int minimum = -9;
-int maximum = 8;
+int minimum = 1;
+int maximum = 10;
 
 int[,] newmatrix = CreateMatrixRndInt(newrows, newcolumns, minimum, maximum);
 
 PrintMatrix(newmatrix);
-Console.WriteLine($"Сумма элементов на главной диагонали равна {SummMainDiagMatrix(newmatrix)}");
+Console.WriteLine();
+

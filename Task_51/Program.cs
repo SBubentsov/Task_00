@@ -25,22 +25,31 @@ void PrintMatrix(int[,] matrix)
         {
 
 
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j], 5} | ");
-            else Console.Write($"{matrix[i, j], 5}");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5} | ");
+            else Console.Write($"{matrix[i, j],5}");
         }
         Console.WriteLine(" |");
     }
 }
 
-
+int SummMainDiagMatrix(int[,] matrix)
+{
+    int count = default;
+    for (int i = 0; i < matrix.GetLength(0) && i < matrix.GetLength(1); i++)
+    {
+      count += matrix[i,i];
+    }
+    return count;
+}
 
 Console.WriteLine("Введите количество строк массива");
 int newrows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов массива");
 int newcolumns = Convert.ToInt32(Console.ReadLine());
-int minimum = -10;
-int maximum = 11;
+int minimum = -9;
+int maximum = 8;
 
 int[,] newmatrix = CreateMatrixRndInt(newrows, newcolumns, minimum, maximum);
 
 PrintMatrix(newmatrix);
+Console.WriteLine($"Сумма элементов на главной диагонали равна {SummMainDiagMatrix(newmatrix)}");

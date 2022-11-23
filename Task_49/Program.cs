@@ -2,6 +2,8 @@
 // Найдите элементы, у которых оба индекса четные
 // и замените эти элементы на их квадраты.
 
+Console.Clear();
+
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];

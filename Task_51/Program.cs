@@ -2,6 +2,8 @@
 // найдите сумму элементов находящихся на главной диагонали.
 //  0.0 1.1 и т.д.
 
+Console.Clear();
+
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];

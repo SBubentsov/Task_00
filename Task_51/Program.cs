@@ -1,13 +1,22 @@
-﻿// 51. Задайте двумерный массив.
-// найдите сумму элементов находящихся на главной диагонали.
-//  0.0 1.1 и т.д.
+﻿// Задача 50. Напишите программу, которая 
+// на вход принимает позиции элемента в двумерном массиве, и 
+// возвращает значение этого элемента или же указание, что такого элемента нет.
+
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 1, 7 -> такого элемента в массиве нет
 
 Console.Clear();
 
-int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+int[,] CreateMatrixRndInt(int min, int max)
 {
-    int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
+    int rows = rnd.Next(1, 10);
+    int columns = rnd.Next(1, 10);
+    int[,] matrix = new int[rows, columns];
+
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -34,24 +43,22 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int SummMainDiagMatrix(int[,] matrix)
+bool CheckRowsColumnsUser(int[,] matrix, int rows, int columns)
 {
-    int count = default;
-    for (int i = 0; i < matrix.GetLength(0) && i < matrix.GetLength(1); i++)
-    {
-      count += matrix[i,i];
-    }
-    return count;
+    if (rows > 0 && rows < matrix.GetLength(0) + 2 && columns > 0 && columns < matrix.GetLength(1) + 2) return true; 
+    
+    return false;
 }
 
-Console.WriteLine("Введите количество строк массива");
-int newrows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов массива");
-int newcolumns = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите номер строки");
+int rowsnumber = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите номер столбца");
+int columnsnumber = Convert.ToInt32(Console.ReadLine());
 int minimum = -9;
 int maximum = 8;
 
-int[,] newmatrix = CreateMatrixRndInt(newrows, newcolumns, minimum, maximum);
+int[,] newmatrix = CreateMatrixRndInt(minimum, maximum);
+bool result = CheckRowsColumnsUser(newmatrix, rowsnumber, columnsnumber);
 
+Console.WriteLine(result? $"Значение элемента в указанных строке и столбце = {newmatrix[rowsnumber - 1,columnsnumber -1]}" : "Элемента массива с такими строкой и столбцом не существует");
 PrintMatrix(newmatrix);
-Console.WriteLine($"Сумма элементов на главной диагонали равна {SummMainDiagMatrix(newmatrix)}");

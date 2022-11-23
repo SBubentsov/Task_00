@@ -46,8 +46,8 @@ int newrows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов массива");
 int newcolumns = Convert.ToInt32(Console.ReadLine());
 int minimum = -10;
-int maximum = 11;
+int maximum = 10;
 
 double[,] newmatrix = CreateMatrixRndInt(newrows, newcolumns, minimum, maximum);
-
+Console.WriteLine();
 PrintMatrix(newmatrix);

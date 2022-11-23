@@ -1,16 +1,16 @@
-﻿// 48. Задайте двемерный массив размером m*n
-// каждый элемент которого находится по формуле
-// Amn = m + n
+﻿// 51. Задайте двумерный массив.
+// найдите сумму элементов находящихся на главной диагонали.
+//  0.0 1.1 и т.д.
 
-int[,] CreateMatrixInt(int rows, int columns)
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];
-    
+    Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = i + j;
+            matrix[i, j] = rnd.Next(min, max + 1);
         }
     }
     return matrix;
@@ -38,8 +38,9 @@ Console.WriteLine("Введите количество строк массива
 int newrows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов массива");
 int newcolumns = Convert.ToInt32(Console.ReadLine());
+int minimum = -10;
+int maximum = 11;
 
-
-int[,] newmatrix = CreateMatrixInt(newrows, newcolumns);
+int[,] newmatrix = CreateMatrixRndInt(newrows, newcolumns, minimum, maximum);
 
 PrintMatrix(newmatrix);

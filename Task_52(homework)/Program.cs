@@ -41,29 +41,32 @@ void PrintMatrix(int[,] matrix)
 
 double[] CreateArrayAverage(int[,] matrix)
 {
-
-
     double[] array = new double[matrix.GetLength(1)];
-    
+
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-    array[j] =     
-    
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        array[i] += matrix[i,j];
+        double summ = 0;
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            summ += matrix[i, j];
+        }
+        double num = summ / (matrix.GetLength(0));
+        array[j] = Math.Round(num, 1);
+        
+
     }
-    }
+
     return array;
 }
 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i]} | ");
-        else Console.Write($"{array[i]}");
+        if (i < array.Length - 1) Console.Write($"{array[i],5} | ");
+        else Console.Write($"{array[i],5}");
     }
     Console.WriteLine(" ]");
 }
@@ -80,3 +83,6 @@ int[,] newmatrix = CreateMatrixRndInt(newrows, newcolumns, minimum, maximum);
 PrintMatrix(newmatrix);
 Console.WriteLine();
 
+double[] array = CreateArrayAverage(newmatrix);
+Console.Write($"Среднее арифметическое в столбцах двумерного массива: ");
+PrintArray(array);

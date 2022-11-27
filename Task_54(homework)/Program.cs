@@ -57,7 +57,9 @@ Console.WriteLine("Введите количество строк массива
 int newrows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов массива");
 int newcolumns = Convert.ToInt32(Console.ReadLine());
-int[,] matrix = CreateMatrixRndInt( newrows, newcolumns, 0, 9);
+int minimum = -9;
+int maximum = 8;
+int[,] matrix = CreateMatrixRndInt( newrows, newcolumns, minimum, maximum);
 
 Console.WriteLine();
 Console.WriteLine("Исходный массив.");

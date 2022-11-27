@@ -41,11 +41,11 @@ void MatrixSortDescendingInRows(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int k = matr.GetLength(1) - 1; k > 0 ; k--)
+        for (int k = matr.GetLength(1) - 1; k > 0; k--)
         {
-            for (int j = 0; j < k; j++)   
+            for (int j = 0; j < k; j++)
             {
-                if (matr[i,j] < matr[i,j+1]) (matr[i,j], matr[i,j+1]) = (matr[i,j+1], matr[i,j]);
+                if (matr[i, j] < matr[i, j + 1]) (matr[i, j], matr[i, j + 1]) = (matr[i, j + 1], matr[i, j]);
             }
         }
     }
@@ -59,10 +59,9 @@ Console.WriteLine("Введите количество столбцов масс
 int newcolumns = Convert.ToInt32(Console.ReadLine());
 int minimum = -9;
 int maximum = 8;
-int[,] matrix = CreateMatrixRndInt( newrows, newcolumns, minimum, maximum);
+int[,] matrix = CreateMatrixRndInt(newrows, newcolumns, minimum, maximum);
 
 Console.WriteLine();
-Console.WriteLine("Исходный массив.");
 PrintMatrix(matrix);
 
 MatrixSortDescendingInRows(matrix);

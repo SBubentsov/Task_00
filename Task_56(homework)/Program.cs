@@ -69,7 +69,6 @@ int maximum = 8;
 int[,] matrix = CreateMatrixRndInt( newrows, newcolumns, minimum, maximum);
 
 Console.WriteLine();
-Console.WriteLine("Исходный массив.");
 PrintMatrix(matrix);
 
 int[] sumMatrixRows = SumMatrixRows(matrix);
